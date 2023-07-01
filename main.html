@@ -13,7 +13,7 @@
       padding: 20px;
     }
 
-    .comment-section {
+    .comment-container {
       margin-bottom: 20px;
     }
 
@@ -63,7 +63,7 @@
     <button style="align-items:end;" type="submit">Submit</button>
   </form>
 	<br>
-  <div class="comment-section">
+  <div class="comment-container">
     <div class="comment">
       <div class="author">John Doe</div>
       <div class="date">June 28, 2023</div>
@@ -86,7 +86,7 @@
       var commentContent = commentInput.value.trim();
 
       if (commentContent !== "") {
-        var commentSection = document.querySelector(".comment-section");
+        var commentSection = document.querySelector(".comment-container");
 
         var commentDiv = document.createElement("div");
         commentDiv.classList.add("comment");
@@ -97,7 +97,7 @@
 
         var dateDiv = document.createElement("div");
         dateDiv.classList.add("date");
-        var currentDate = new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
+        var currentDate = new Date().toLocaleString("en-US", { day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' });
         dateDiv.textContent = currentDate;
 
         var contentDiv = document.createElement("div");
